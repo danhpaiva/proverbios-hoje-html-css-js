@@ -13,6 +13,15 @@ capítulo válido, sem necessidade de ajustes para meses de 28, 29, 30 ou 31 dia
 
 HTML, CSS e JavaScript puros, sem framework nem build step. Os dados dos 31
 capítulos (versículo de destaque + comentário) ficam em [`js/data.js`](js/data.js).
+Fonte: [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts).
+
+## Tema claro/escuro
+
+O tema segue por padrão a preferência do sistema operacional
+(`prefers-color-scheme`). Um botão no canto superior direito permite escolher
+manualmente entre claro e escuro; a escolha fica salva em `localStorage` e é
+aplicada antes da primeira renderização (script inline no `<head>`), evitando
+flash do tema errado ao recarregar a página.
 
 ## Conteúdo e fontes
 

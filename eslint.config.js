@@ -7,6 +7,7 @@ module.exports = [
       globals: {
         window: "readonly",
         document: "readonly",
+        localStorage: "readonly",
         Intl: "readonly",
         PROVERBIOS_DATA: "writable",
         module: "writable",
