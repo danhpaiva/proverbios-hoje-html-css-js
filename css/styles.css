@@ -1,11 +1,47 @@
 :root {
   --cor-fundo: #faf8f4;
+  --cor-cartao: #fff;
   --cor-texto: #2b2926;
   --cor-texto-suave: #6b6459;
   --cor-destaque: #8a6d3b;
   --cor-borda: #e5decf;
   --fonte-serifada: "Georgia", "Times New Roman", serif;
-  --fonte-base: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", sans-serif;
+  --fonte-base: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", sans-serif;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #1c1a17;
+    --cor-cartao: #242019;
+    --cor-texto: #f0ece3;
+    --cor-texto-suave: #a89f8f;
+    --cor-destaque: #d9b26a;
+    --cor-borda: #38332b;
+  }
+}
+
+:root[data-theme="light"] {
+  --cor-fundo: #faf8f4;
+  --cor-cartao: #fff;
+  --cor-texto: #2b2926;
+  --cor-texto-suave: #6b6459;
+  --cor-destaque: #8a6d3b;
+  --cor-borda: #e5decf;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --cor-fundo: #1c1a17;
+  --cor-cartao: #242019;
+  --cor-texto: #f0ece3;
+  --cor-texto-suave: #a89f8f;
+  --cor-destaque: #d9b26a;
+  --cor-borda: #38332b;
+
+  color-scheme: dark;
 }
 
 * {
@@ -18,6 +54,7 @@ body {
   color: var(--cor-texto);
   font-family: var(--fonte-base);
   line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .pagina {
@@ -27,8 +64,65 @@ body {
 }
 
 .cabecalho {
+  position: relative;
   text-align: center;
   margin-bottom: 2.5rem;
+}
+
+.botao-tema {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--cor-borda);
+  border-radius: 50%;
+  background-color: var(--cor-cartao);
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.botao-tema:hover {
+  color: var(--cor-destaque);
+}
+
+.icone-sol {
+  display: none;
+}
+
+.icone-lua {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .icone-sol {
+    display: block;
+  }
+
+  .icone-lua {
+    display: none;
+  }
+}
+
+:root[data-theme="light"] .icone-sol {
+  display: none;
+}
+
+:root[data-theme="light"] .icone-lua {
+  display: block;
+}
+
+:root[data-theme="dark"] .icone-sol {
+  display: block;
+}
+
+:root[data-theme="dark"] .icone-lua {
+  display: none;
 }
 
 .data {
@@ -48,11 +142,12 @@ h1 {
 }
 
 .cartao {
-  background-color: #fff;
+  background-color: var(--cor-cartao);
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
   padding: 2rem 1.75rem;
   margin-bottom: 2rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .referencia {
