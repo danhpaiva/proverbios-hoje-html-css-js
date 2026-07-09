@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provérbios de Hoje</title>
+  <meta name="description" content="Um versículo de Provérbios para cada dia do mês, com comentário reformado.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="pagina">
+    <header class="cabecalho">
+      <p class="data" id="data-hoje"></p>
+      <h1>Provérbios de Hoje</h1>
+    </header>
+
+    <section class="cartao">
+      <p class="referencia" id="referencia"></p>
+      <blockquote class="versiculo">
+        <p id="versiculo-texto"></p>
+      </blockquote>
+    </section>
+
+    <section class="comentario">
+      <h2>Comentário</h2>
+      <p class="comentario-autor" id="comentario-autor"></p>
+      <p id="comentario-texto"></p>
+    </section>
+
+    <footer class="rodape">
+      <p>
+        Texto bíblico em domínio público (tradução de Almeida). Comentários adaptados e
+        parafraseados a partir de temas conhecidos de comentaristas reformados
+        (Matthew Henry, Charles Bridges, John Gill) &mdash; não são citações literais.
+      </p>
+    </footer>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
