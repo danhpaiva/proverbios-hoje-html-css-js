@@ -1,0 +1,19 @@
+{
+  "name": "proverbios-hoje-html-css-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site estático que exibe diariamente um versículo de Provérbios (capítulo do dia) com comentário reformado.",
+  "scripts": {
+    "validate:data": "node scripts/validate-data.js",
+    "lint:js": "eslint js scripts",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:html": "html-validate index.html",
+    "test": "npm run validate:data && npm run lint:js && npm run lint:css && npm run lint:html"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.0",
+    "html-validate": "^8.18.1",
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}
